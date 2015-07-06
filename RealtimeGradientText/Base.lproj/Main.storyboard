@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="15A204h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="RealtimeGradientText" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" text="Hello" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="US4-1G-fpl">
+                                <rect key="frame" x="66" y="283.5" width="468" height="33"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" text="Hello" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hB7-FL-2LD">
+                                <rect key="frame" x="66" y="283.5" width="468" height="33"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                            </textView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="US4-1G-fpl" secondAttribute="bottom" id="BQ5-f7-OKq"/>
+                            <constraint firstAttribute="centerX" secondItem="US4-1G-fpl" secondAttribute="centerX" id="Bya-er-C9z"/>
+                            <constraint firstItem="US4-1G-fpl" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="50" id="EUc-eB-aRn"/>
+                            <constraint firstItem="US4-1G-fpl" firstAttribute="leading" secondItem="hB7-FL-2LD" secondAttribute="leading" id="G6A-as-gEs"/>
+                            <constraint firstItem="US4-1G-fpl" firstAttribute="width" secondItem="hB7-FL-2LD" secondAttribute="width" id="H5G-Uj-YQt"/>
+                            <constraint firstItem="US4-1G-fpl" firstAttribute="top" secondItem="hB7-FL-2LD" secondAttribute="top" id="JSl-6x-rlC"/>
+                            <constraint firstItem="US4-1G-fpl" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="lif-qi-UxN"/>
+                            <constraint firstItem="US4-1G-fpl" firstAttribute="height" secondItem="hB7-FL-2LD" secondAttribute="height" id="nZo-1Q-SEa"/>
+                            <constraint firstAttribute="centerY" secondItem="US4-1G-fpl" secondAttribute="centerY" id="nkq-hz-ri7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="US4-1G-fpl" secondAttribute="trailing" constant="50" id="ofe-FP-ccM"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Bya-er-C9z"/>
+                                <exclude reference="lif-qi-UxN"/>
+                                <exclude reference="BQ5-f7-OKq"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="originalTextView" destination="US4-1G-fpl" id="eNt-EZ-b3x"/>
+                        <outlet property="transparentTextview" destination="hB7-FL-2LD" id="fRO-8N-m6c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
