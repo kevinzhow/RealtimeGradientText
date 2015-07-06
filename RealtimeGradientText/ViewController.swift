@@ -57,17 +57,17 @@ class ViewController: UIViewController {
 
         if order {
             
-            gradient.startPoint = CGPoint(x: gradient.startPoint.x + 0.01, y: gradient.startPoint.y + 0.01)
-            gradient.endPoint = CGPoint(x: gradient.endPoint.x - 0.01, y: gradient.endPoint.y - 0.01)
+            gradient.startPoint = CGPoint(x: 0, y: gradient.startPoint.y + 0.01)
+            gradient.endPoint = CGPoint(x: gradient.endPoint.x - 0.01, y: 1.0)
             
-            if gradient.startPoint.x >= 1 {
+            if gradient.startPoint.y >= 1 {
                 order = false
             }
         } else {
-            gradient.startPoint = CGPoint(x: gradient.startPoint.x - 0.01, y: gradient.startPoint.y - 0.01)
-            gradient.endPoint = CGPoint(x: gradient.endPoint.x + 0.01, y: gradient.endPoint.y + 0.01)
+            gradient.startPoint = CGPoint(x: 0, y: gradient.startPoint.y - 0.01)
+            gradient.endPoint = CGPoint(x: gradient.endPoint.x + 0.01, y: 1.0)
             
-            if gradient.startPoint.x <= 0 {
+            if gradient.startPoint.y <= 0 {
                 order = true
             }
         }
