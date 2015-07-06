@@ -33,14 +33,15 @@ class ViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
         if !initLayout {
-            gradient.frame = originalTextView.frame
-            originalTextView.frame = originalTextView.bounds
+            gradient.frame = originalTextView.bounds
+            
+            originalTextView.frame = originalTextView.bounds // Reset originalTextView Position when as gradient's mask
             
             gradient.colors = [UIColor(red:0, green:0.46, blue:1, alpha:1.0).CGColor, UIColor(red:0.91, green:0.28, blue:0.5, alpha:1.0).CGColor]
             gradient.locations = [0.0,1.0];
             gradient.mask = originalTextView.layer
             
-            view.layer.addSublayer(gradient)
+            transparentTextview.layer.addSublayer(gradient)
         }
 
     }
