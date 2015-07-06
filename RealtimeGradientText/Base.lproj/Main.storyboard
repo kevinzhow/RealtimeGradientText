@@ -17,18 +17,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" text="Hello" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="US4-1G-fpl">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="US4-1G-fpl">
                                 <rect key="frame" x="66" y="283.5" width="468" height="33"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <string key="text">为了能继续编辑 UITextView，我又做了一个背景透明，文字透明的 UITextView，当新的 UITextView 文字改变时，同步到旧的 UITextView，并且把 CAGradientLayer 添加到了这个新的 UITextView 里。
+
+这样就可以产生以假乱真的实时渐变效果。</string>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" text="Hello" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hB7-FL-2LD">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hB7-FL-2LD">
                                 <rect key="frame" x="66" y="283.5" width="468" height="33"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <string key="text">为了能继续编辑 UITextView，我又做了一个背景透明，文字透明的 UITextView，当新的 UITextView 文字改变时，同步到旧的 UITextView，并且把 CAGradientLayer 添加到了这个新的 UITextView 里。
+
+这样就可以产生以假乱真的实时渐变效果。</string>
                                 <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>

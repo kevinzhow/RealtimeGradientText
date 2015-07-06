@@ -14,7 +14,11 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var originalTextView: UITextView!
     
+    var displayLink: CADisplayLink?
+    
     var initLayout = false
+    
+    var order = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +27,9 @@ class ViewController: UIViewController {
         gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
         
         transparentTextview.delegate = self
+        
+        var tap = UITapGestureRecognizer(target: self, action: "endEdit")
+        view.addGestureRecognizer(tap)
         // Do any additional setup after loading the view, typically from a nib.
         
     }
@@ -45,6 +52,31 @@ class ViewController: UIViewController {
         }
 
     }
+    
+    func callbackShimmer() {
+
+        if order {
+            
+            gradient.startPoint = CGPoint(x: gradient.startPoint.x + 0.01, y: gradient.startPoint.y + 0.01)
+            gradient.endPoint = CGPoint(x: gradient.endPoint.x - 0.01, y: gradient.endPoint.y - 0.01)
+            
+            if gradient.startPoint.x >= 1 {
+                order = false
+            }
+        } else {
+            gradient.startPoint = CGPoint(x: gradient.startPoint.x - 0.01, y: gradient.startPoint.y - 0.01)
+            gradient.endPoint = CGPoint(x: gradient.endPoint.x + 0.01, y: gradient.endPoint.y + 0.01)
+            
+            if gradient.startPoint.x <= 0 {
+                order = true
+            }
+        }
+
+    }
+    
+    func endEdit() {
+        transparentTextview.resignFirstResponder()
+    }
 
 
     override func didReceiveMemoryWarning() {
@@ -57,8 +89,21 @@ class ViewController: UIViewController {
 
 extension ViewController: UITextViewDelegate {
     func textViewDidChange(textView: UITextView) {
-        println("New text")
         originalTextView.text = textView.text
+    }
+    
+    func textViewDidBeginEditing(textView: UITextView) {
+        println("Invalidate")
+        if let displayLink = displayLink {
+            displayLink.invalidate()
+        }
+
+    }
+    
+    func textViewDidEndEditing(textView: UITextView) {
+        println("End Edit")
+        displayLink = CADisplayLink(target: self, selector: Selector("callbackShimmer"))
+        displayLink!.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSRunLoopCommonModes)
     }
 }
 
